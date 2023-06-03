@@ -29,10 +29,11 @@ class CustomerAdressViews(APIView):
         instance=customer.object.all()
         serializer=CustomeradressSerializer(instance,many=True)
         return Response(serializer.data)
-
+    
 class CustomerDetailsAddressViews(APIView):
 
     def get(self,request,pk):
         instance=customer.object.filter(id=pk)
         serializers=CustomerDetailsAddressSerializer(instance,many = True)
         return Response(serializers.data)
+    
